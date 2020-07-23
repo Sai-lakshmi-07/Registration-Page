@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <style type="text/css">
+      *{
+        margin:0;
+        padding:0;
+      }
+      body{
+        font-family:sans-serif;
+        margin-top:40px;
+      }
+      .reg_form{
+        width:800px;
+        background-color:rgb(0,0,0,0.7);
+        margin:auto;
+        color:#FFFFFF;
+        padding:10px 0px 10px 0px;
+        text-align:center;
+        border-radius:15px 15px 0px 0px
+      }
+      .main{
+        width:800px;
+        background-color:rgb(0,0,0,0.4);
+        margin:auto;
+      }
+      form{
+        padding:10px;
+      }
+      #name{
+        width:100%;
+        height:100px;
+      }
+      .name{
+        margin-left:25px;
+        margin-top:30px;
+        width:125px;
+        color:white;
+        font-weight:700;
+        font-size:18px;
+      }
+      .firstname,
+      .password{
+        position:relative;
+        left:200px;
+        top:-37px;
+        border-radius:6px;
+        line-height:40px;
+        padding:0 22px;
+        font-size:16px;
+      }
+      .lastname,
+      .cpwd{
+        position:relative;
+        left:409px;
+        top:-80px;
+        border-radius:6px;
+        line-height:40px;
+        padding:0 22px;
+        font-size:16px;
+        color:#555;
+      }
+      .firstlabel,
+      .pwdlabel{
+        position:relative;
+        color:#E5E5E5;
+        text-transform:capitalize;
+        font-size:16px;
+        left:203px;
+        top:-45px;
+      }
+      .lastlabel,
+      .cPwdlabel{
+        position:relative;
+        color:#E5E5E5;
+        text-transform:capitalize;
+        font-size:16px;
+        left:170px;
+        top:-45px;
+      }
+      .college{
+        position:relative;
+        border-radius:6px;
+        width:480px;
+        line-height:40px;
+        padding:0 22px;
+        font-size:16px;
+        color:#555;
+        left:200px;
+        top:-37px;
+      }
+      .email{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        color:#555;
+      }
+      .code{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:95px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        color:#555;
+      }
+      .number{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:289px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        color:#555;
+      }
+      .area{
+        position:relative;
+        text-transform:capitalize;
+        color:#E5E5E5;
+        font-size:16px;
+        left:54px;
+        top:-4px;
+      }
+      .phone-number{
+        position:relative;
+        text-transform:capitalize;
+        color:#E5E5E5;
+        font-size:16px;
+        left:-135px;
+        top:-2px;
+      }
+      .option{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:530px;
+        height:40px;
+        border-radius:10px;
+        padding:0 22px;
+        font-size:16px;
+        color:#555;
+        outline:none;
+        overflow:hidden;
+      }
+      .option option{
+        font-size:14px;
+      }
+      button{
+        background-color:#3BAF9F;
+        display:block;
+        margin:20px 0px 20px 355px;
+        text-align:center;
+        border-radius:12px;
+        border:2px solid #366473
+        padding:14px 110px;
+        outline:none;
+        color:white;
+        cursor:pointer;
+        transition:0.25px;
+        height: 4em;
+        width: 7em;
+      }
+      button:hover{
+        background-color:#5390F5;
+      }
+    </style>
+    <script>
+    function validateFirst(){
+      var fname=document.form.first_name;
+      if (fname==null || fname=="")
+      {
+        alert("FirstName field can't be blank");
+        return false;
+      }
+    }
+    function validateLast(){
+      var lname=document.form.last_name;
+      if (lname==null || lname=="")
+      {
+        alert("LastName field can't be blank");
+        return false;
+      }
+    }
+    function validateCollege(){
+      var clg=document.form.college;
+      if (clg==null || clg=="")
+      {
+        alert("College field can't be blank");
+        return false;
+      }
+    }
+    function validateEmail() {
+      var mail = document.form.mail;
+      var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+      if(mail.value=='' || mail.value.match(mailformat)) {
+        return true;
+      }
+      else {
+        alert("Enter a valid Email...");
+        mail.value = "";
+        document.form.mail.focus();
+        return false;
+      }
+    }
+
+    function validatePhoneNo() {
+      var phone = document.form.phone;
+      var phoneno = /^\d{10}$/;
+      if(phone.value=='' || (phone.value.match(phoneno))) {
+        return true;
+      }
+      else{
+        alert("Enter a valid Mobile Number...");
+        phone.value = "";
+        document.form.phone.focus();
+        return false;
+      }
+    }
+
+    function validateArea(){
+      var areacode = document.form.area;
+      var codeformat = /^\+\d{2}$/;
+      if(areacode.value == '' || areacode.value.match(codeformat)){
+        return true;
+      }
+      else{
+        alert("Enter Area Code in '+00' format...");
+        areacode.value = "";
+        document.form.area.focus();
+        return false;
+      }
+    }
+
+    function validatePassword() {
+      var pwd = document.form.pwd;
+      if(pwd.value=='' || pwd.value.length>=5) {
+        return true;
+      }
+      else{
+        alert("The password should be minimum 5 characters length...")
+        pwd.value = "";
+        document.form.pwd.focus();
+        return false;
+      }
+    }
+
+    function checkPwdMatch(){
+      var confirmpwd = document.form.confirmpwd;
+      var pwd = document.form.pwd;
+      if(confirmpwd.value=='' || pwd.value==confirmpwd.value) {
+        return true;
+      }
+      else if(pwd.value=='' && confirmpwd.value!=''){
+        alert("Enter password...")
+        confirmpwd.value = "";
+        document.form.pwd.focus();
+        return false;
+      }
+      else{
+        alert("Password is not matched...")
+        confirmPwd.value = "";
+        document.form.confirmpwd.focus();
+        return false;
+      }
+    }
+
+    </script>
+  </head>
+  <body>
+    <div class="reg_form"><h1>Registration Form</h1></div>
+    <div class="main">
+      <form name="form" method="post">
+        <div id="name">
+          <h2 class="name">Name</h2>
+          <input class="firstname" type="text" name="first_name" required onblur="validateFirst()"><br>
+          <label class="firstlabel">First Name</label>
+          <input class="lastname" type="text" name="last_name" required onblur="validateLast()">
+          <label class="lastlabel">Last Name</label>
+        </div>
+        <h2 class="name">CollegeName</h2>
+        <input class="college" type="text" name="college" required>
+        <h2 class="name">EmailAddress</h2>
+        <input class="email" type="email" name="mail" required onblur="validateEmail()">
+        <h2 class="name">Mobile</h2>
+        <input class="code" type="text" name="area" required onblur="validateArea()">
+        <label class="area">Code</label>
+        <input class="number" type="text" name="phone" required onblur="validatePhoneNo()">
+        <label class="phone-number">MobileNumber</label>
+        <h2 class="name">Branch</h2>
+        <select class="option" name="branch">
+          <option disabled="Disabled" selected="Selected">-Choose Branch-</option>
+          <option>CSE</option>
+          <option>ECE</option>
+          <option>IT</option>
+          <option>EEE</option>
+          <option>CE</option>
+        </select><br><br>
+        <div id="name">
+          <h2 class="name">Password</h2>
+          <input class="password" type="password" name="pwd" required onblur="validatePassword()"><br>
+          <label class="pwdlabel">Password</label>
+          <input class="cpwd" type="password" name="confirmpwd" required onblur="checkPwdMatch()">
+          <label class="cPwdlabel">Confirm Password</label>
+        </div>
+        <button type="submit" name="button">Register</button>
+      </form>
+
+    </div>
+  </body>
+</html>
